@@ -1,5 +1,5 @@
 """
-LLM调用模块 — 封装DashScope(通义千问)和火山引擎(豆包)API
+LLM调用模块 — 封装DashScope(通义千问 qwen3.5-plus)和火山引擎(豆包)API
 """
 
 from typing import List, Dict, Optional
@@ -10,7 +10,7 @@ def call_dashscope(messages: List[Dict[str, str]],
                    temperature: float = 0.8,
                    max_tokens: int = 256) -> str:
     """
-    调用阿里云DashScope API（通义千问）
+    调用阿里云DashScope API（通义千问 qwen3.5-plus）
 
     messages格式: [{"role": "system", "content": "..."}, {"role": "user", "content": "..."}]
     """

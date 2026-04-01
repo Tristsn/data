@@ -345,7 +345,7 @@ def retrieve_memories(query: str, memory_store, top_k: int = 5,
 ### 核心框架说明
 
 **1. 大语言模型（LLM）— 对话生成核心**
-- **DashScope（阿里云通义千问）**：主力对话生成模型，支持System Prompt定制人格
+- **DashScope（阿里云通义千问 qwen3.5-plus）**：主力对话生成模型，支持System Prompt定制人格
 - **火山引擎（豆包）**：备选模型，用于A/B测试和容灾切换
 - **调用方式**：通过API调用，Prompt中注入性格、情绪、记忆等上下文
 - **选型理由**：中文对话能力强，支持长上下文，API稳定，成本可控
@@ -395,7 +395,7 @@ def retrieve_memories(query: str, memory_store, top_k: int = 5,
 ## 5、开发环境
 
 ### 技术栈
-- **大语言模型**：DashScope 1.14.0（通义千问API）、volcengine火山引擎（豆包API）
+- **大语言模型**：DashScope 1.14.0（通义千问 qwen3.5-plus）、volcengine火山引擎（豆包API）
 - **Agent框架**：LangChain 0.1.x
 - **深度学习框架**：PyTorch 2.3.0、Transformers 4.45.1
 - **Embedding模型**：text2vec-base-chinese / m3e-base
@@ -481,6 +481,6 @@ def retrieve_memories(query: str, memory_store, top_k: int = 5,
 
 **智能家居情感对话Agent系统** — 基于LLM和MBTI性格模型的拟人化智能家居对话系统，支持情绪感知、性格养成和长期记忆能力。
 
-- 基于DashScope（通义千问）/火山引擎（豆包）API构建对话Agent，融合文本情绪分析与设备状态感知（电量、互动方式、用户身份），实现多模态情绪驱动的拟人化回复生成，支持主备模型自动切换的容灾机制。
+- 基于DashScope（通义千问 qwen3.5-plus）/火山引擎（豆包）API构建对话Agent，融合文本情绪分析与设备状态感知（电量、互动方式、用户身份），实现多模态情绪驱动的拟人化回复生成，支持主备模型自动切换的容灾机制。
 - 设计MBTI四维连续值性格模型（E/I、S/N、T/F、J/P），通过每日对话互动特征分析自动微调性格参数，实现Agent人格的渐进式进化，使不同用户的设备呈现差异化的对话风格。
 - 基于Elasticsearch构建长期记忆系统，利用ES的kNN向量检索与BM25关键词检索的混合能力，结合时间衰减和重要性加权实现精准记忆召回；使用Redis存储会话状态与性格参数，支持跨会话的连贯对话体验。

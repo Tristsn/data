@@ -6,7 +6,7 @@
 LLM_CONFIG = {
     "dashscope": {
         "api_key": "your-dashscope-api-key",
-        "model": "qwen-turbo",  # 通义千问
+        "model": "qwen3.5-plus",  # 通义千问
     },
     "volcengine": {
         "api_key": "your-volcengine-api-key",
